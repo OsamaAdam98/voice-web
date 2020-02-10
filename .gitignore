@@ -12,6 +12,24 @@ xcuserdata/
 .vscode/
 ZZidea
 
+# Eventually, we want to move common's output into a ./js/ directory by adding:
+#
+#   "outDir": "./js"
+#
+# to ts-config.js. Then we can add:
+#
+#   "exports": {
+#     "./": "./js/"
+#   },
+#
+# to package.json to ensure node knows where to look. Once we've done all that,
+# the following lines can be replaced by a simple:
+#
+# common/js/
+common/*.d.ts*
+common/*.js
+common/tsconfig.tsbuildinfo
+
 # Nubis
 nubis/librarian-puppet.tar.gz
 nubis/librarian-puppet

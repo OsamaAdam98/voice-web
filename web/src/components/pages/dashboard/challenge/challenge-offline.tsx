@@ -18,7 +18,8 @@ function ChallengeOffline({
   const dateFormat = { year: 'numeric', month: 'short', day: 'numeric' };
 
   useEffect(() => {
-    if (isBeforeChallenge && location.state && location.state.earlyEnroll) {
+    // @ts-ignore
+    if (isBeforeChallenge && location.state?.earlyEnroll) {
       addAchievement(
         50,
         'Bonus! You signed up in time for some extra points.',

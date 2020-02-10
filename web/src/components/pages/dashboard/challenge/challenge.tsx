@@ -94,7 +94,8 @@ function ChallengePage(props: Props & RouteComponentProps<any>) {
   // [TODO]: Hook this up to the DB so we only see it once.
   const addAchievement = useAction(Notifications.actions.addAchievement);
   const [showOnboardingModal, setShowOnboardingModal] = useState(
-    props.location.state && props.location.state.showOnboardingModal
+    // @ts-ignore
+    props.location.state?.showOnboardingModal
   );
   const [weekly, setWeekly] = useState(null);
   const account = useAccount();
@@ -118,7 +119,8 @@ function ChallengePage(props: Props & RouteComponentProps<any>) {
         <OnboardingModal
           onRequestClose={() => {
             setShowOnboardingModal(false);
-            if (props.location.state && props.location.state.earlyEnroll) {
+            // @ts-ignore
+            if (props.location.state?.earlyEnroll) {
               addAchievement(
                 50,
                 'Bonus! You signed up in time for some extra points.'

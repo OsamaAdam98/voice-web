@@ -1,5 +1,9 @@
 {
   "name": "common",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc-watch"
+  }
 }
